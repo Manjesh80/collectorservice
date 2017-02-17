@@ -18,6 +18,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -49,6 +51,13 @@ public class EventStepdefs {
     public void theEventNumberIsPresent(int arg0) throws Throwable {
         //throw new PendingException();
     }
+
+    /*@Then("^the service should return the event with name$")
+    public void theServiceShouldReturnTheEventWithName() throws Throwable {
+        //throw new PendingException();
+        ResponseEntity<Event> response = restTemplate.exchange("/event/444", HttpMethod.GET, null, Event.class, new HashMap<>());
+        assertTrue(response.getBody().getEventID() == 444);
+    }*/
 
     @Then("^the service should return the event with name$")
     public void theServiceShouldReturnTheEventWithName() throws Throwable {

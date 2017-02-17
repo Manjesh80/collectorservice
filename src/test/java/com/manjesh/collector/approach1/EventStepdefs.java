@@ -20,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -61,11 +62,8 @@ public class EventStepdefs {
 
     @Then("^the service should return the event with name$")
     public void theServiceShouldReturnTheEventWithName() throws Throwable {
-        //throw new PendingException();
         String caller = "";
         ResponseEntity<String> response = restTemplate.exchange("/event/1", HttpMethod.GET, null, String.class, caller);
-        assertTrue(response.getBody().contains("event"));
-        //Event event = restTemplate.getForObject("/event/1", Event.class);
-        //assertNotNull(event);
+        assertEquals(response.getBody(), "{\"eventID\":1,\"eventName\":\"Ganesh\",\"networkID\":\"Network 100\"}");
     }
 }

@@ -1,5 +1,7 @@
 package com.manjesh.collector.domain;
 
+import java.util.List;
+
 /**
  * Author: mg153v (Manjesh Gowda). Creation Date: 2/17/2017.
  */
@@ -33,9 +35,23 @@ public class Event {
     private String eventName;
     private String networkID;
 
-    public Event(int eventID, String eventName, String networkID) {
+    public Event(int eventID, String eventName, String networkID, List<OID> oids) {
         this.eventID = eventID;
         this.eventName = eventName;
         this.networkID = networkID;
+        this.oids = oids;
+    }
+
+    private List<OID> oids;
+
+    public List<OID> getOids() {
+        return oids;
+    }
+
+    public Event() {
+    }
+
+    public void setOids(List<OID> oids) {
+        this.oids = oids;
     }
 }

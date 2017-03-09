@@ -22,7 +22,7 @@ public class EventService {
 
     @RequestMapping(method = RequestMethod.POST)
     public Event addEvent(@RequestBody Event event) {
-        System.out.println("Ganesh ==>  " + event.getOids().size());
+        System.out.println("Ganesh ==>  " + event.getOids().length);
         return event;
     }
 }

@@ -5,6 +5,22 @@ package com.manjesh.collector.domain;
  */
 public class OID {
 
+    public int getOidNumber() {
+        return oidNumber;
+    }
+
+    public void setOidNumber(int oidNumber) {
+        this.oidNumber = oidNumber;
+    }
+
+    public String getOidName() {
+        return oidName;
+    }
+
+    public void setOidName(String oidName) {
+        this.oidName = oidName;
+    }
+
     private int oidNumber;
     private String oidName;
 

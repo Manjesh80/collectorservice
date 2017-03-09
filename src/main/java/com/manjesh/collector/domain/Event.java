@@ -35,23 +35,25 @@ public class Event {
     private String eventName;
     private String networkID;
 
-    public Event(int eventID, String eventName, String networkID, List<OID> oids) {
+    public Event(int eventID, String eventName, String networkID, OID[] oids) {
         this.eventID = eventID;
         this.eventName = eventName;
         this.networkID = networkID;
         this.oids = oids;
     }
 
-    private List<OID> oids;
+    private OID[] oids;
 
-    public List<OID> getOids() {
-        return oids;
-    }
 
     public Event() {
     }
 
-    public void setOids(List<OID> oids) {
+
+    public OID[] getOids() {
+        return oids;
+    }
+
+    public void setOids(OID[] oids) {
         this.oids = oids;
     }
 }

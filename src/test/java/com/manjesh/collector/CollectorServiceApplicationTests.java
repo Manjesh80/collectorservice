@@ -34,10 +34,11 @@ public class CollectorServiceApplicationTests {
 
     @Test
     public void testPost() {
-        Event addEvent = new Event(444, "Jai", "Ganesh", Arrays.asList(
+        Event addEvent = new Event(444, "Jai", "Ganesh", new OID[]{
                 new OID(1, "Ganesh"),
-                new OID(2, "Vignesh")));
-        ResponseEntity<Event> response = this.restTemplate.postForEntity("/event", addEvent, Event.class, Collections.EMPTY_MAP);
+                new OID(2, "Vignesh")});
+        ResponseEntity<Event> response = this.restTemplate.postForEntity("/event", addEvent, Event.class,
+                Collections.EMPTY_MAP);
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
     }
 
